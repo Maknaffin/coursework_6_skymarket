@@ -1,7 +1,7 @@
 from django.urls import path
-from redoc.views import redoc, redoc_json
+from .views import RedocTemplateView, redoc_json
 
 urlpatterns = [
-    path("", redoc),
+    path("", RedocTemplateView.as_view(), name="redoc"),
     path("json/", redoc_json)
 ]
